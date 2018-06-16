@@ -203,7 +203,7 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
+" => Moving around, tabs, windows
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
@@ -218,14 +218,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Close the current buffer
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
-" Close all the buffers
-map <leader>ba :bufdo bd<cr>
-
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -238,6 +231,7 @@ map <leader>t<leader> :tabnext<cr>
 let g:lasttab = 1
 nmap <Leader>t :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
+
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -262,6 +256,38 @@ vnoremap <tab> %
 
 :set listchars=tab:>·,trail:~,extends:>,precedes:<,space:.
 :set list
+
+
+
+
+
+
+
+""""""""""""""""""""""""""""""
+
+" Buffers
+
+""""""""""""""""""""""""""""""
+
+" Close the current buffer
+map <leader>bd :Bclose<cr>:tabclose<cr>gT
+
+" Close all the buffers
+map <leader>ba :bufdo bd<cr>
+
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
+" By default, Vim makes it difficult to create hidden buffers. To make Vim more liberal about hidden buffers
+set hidden
+
+nnoremap gb :ls<CR>:b<Space>
+
+
+
+
+
+
 
 
 
