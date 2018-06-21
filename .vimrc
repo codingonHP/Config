@@ -459,6 +459,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'jason0x43/vim-js-indent'  """https://github.com/jason0x43/vim-js-indent
     Plug 'rafi/awesome-vim-colorschemes'    """https://github.com/rafi/awesome-vim-colorschemes
     Plug 'easymotion/vim-easymotion'
+    Plug 'sickill/vim-pasta' """Pasting in Vim with indentation adjusted to destination context.
+    Plug 'vim-scripts/ZoomWin' """zoooooooom
+    Plug 'jlanzarotta/bufexplorer' """Buffer explorer '<leader>be' (normal open) or 'bt' (toggle open / close) or 'bs' (force horizontal split open) or 'bv' (force vertical split open)
 call plug#end()
 
 
@@ -521,3 +524,17 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+
+
+"""""""""""""""""""""""""""CtrlP""""""""""""" :CtrlP or :CtrlP [starting-directory]  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'rac'
+
+
+
+"""""""""""""""""""""""ZOOOOOOOOOOOOM""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap = :ZoomWin<CR>
+set nocp
+filetype plugin on
